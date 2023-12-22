@@ -1,0 +1,18 @@
+channels:
+  - bioconda
+  - conda-forge
+  - nodefaults
+dependencies:
+  - r-optparse=1.7.3
+  - r-base=4.3.2
+  - bioconductor-edger=4.0.2
+  - bioconductor-limma = 3.58.1
+  - bioconductor-rsubread = 2.16.0
+  - r-tidyverse=2.0.0
+  - r-ggplot2=3.4.4
+  - bioconductor-deseq2=1.42.0
+  - bioconductor-clusterprofiler=4.10.0
+  - bioconductor-org.hs.eg.db=3.18.0
+  - r-openxlsx=4.2.5.2
+  - r-ggsci=3.0.0
+  - r-ggrepel=0.9.4

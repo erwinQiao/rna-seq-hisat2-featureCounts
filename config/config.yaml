@@ -1,0 +1,23 @@
+# path or URL to sample sheet
+samples: config/samples.tsv
+
+# Units are technical replicates  
+#units: config/units.tsv
+
+# ref setting 
+ref:
+  species: "homo_sapiens"  # Ensembl using homo_sapiens or genecode using human
+  build: 110  # Ensembl using100 or  genecode using 44
+
+# resources setting 
+resources: # computing resources
+  fastqc:
+    cpu: 85
+
+  trimming:
+    cpu: 85
+    phred: --phred33 # phred33 or phred64
+
+  hisat2:
+    cpu: 85
+

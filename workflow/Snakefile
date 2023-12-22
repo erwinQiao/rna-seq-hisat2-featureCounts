@@ -1,0 +1,40 @@
+import os
+from scripts.resources import Resources
+from scripts.common import input_samples
+from snakemake.utils import min_version
+
+#### set minimum snakemake version ####
+min_version("7.2.4")
+
+#### load config ####
+configfile: "config/config.yaml"
+
+#### load genome resources to be used
+resources = Resources(config["ref"]["species"], config["ref"]["build"])
+
+#### get sample names
+SAMPLES =  input_samples()
+print(SAMPLES)
+
+#### load rules ####
+include: "rules/fastqc.smk"
+include: "rules/trimming.smk"
+include: "rules/resources.smk"
+include: "rules/hisat2_index.smk"
+include: "rules/hisat2_align.smk"
+include: "rules/featureCounts.smk"
+include: "rules/mergeCounts.smk"
+include: "rules/plot.smk"
+
+rule all:
+    input:
+        "results/qc/multiqc_report.html",
+        "results/mergeCounts/genesMerge.count",
+        "results/mergeCounts/genesFPKM.count",
+        "results/mergeCounts/genesTPM.count",
+        "results/plot/PCAplot.pdf",
+        "results/plot/ViolinplotFPKM.pdf"
+         
+
+
+

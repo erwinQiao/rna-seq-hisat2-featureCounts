@@ -1,0 +1,5 @@
+channels:
+  - default
+  - anaconda
+dependencies:
+  - wget = 1.21.4
