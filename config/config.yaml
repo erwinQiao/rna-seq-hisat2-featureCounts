@@ -1,0 +1,12 @@
+# path or URL to sample sheet
+samples: config/samples.tsv
+
+# Units are technical replicates  
+units: config/units.tsv
+
+# ref setting 
+ref:
+  species: homo_sapiens  
+  release: 100  
+  build: GRCh38
+
