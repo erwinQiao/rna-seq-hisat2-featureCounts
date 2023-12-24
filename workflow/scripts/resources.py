@@ -33,7 +33,7 @@ class Resources:
         elif genome.lower() == "homo_sapiens" and build == 110:
             # download ensembl files
             self.ensembl_fa_url = f"{base_url_ensembl}{build}/fasta/{genome}/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz"
-            self.ensembl_gtf_url = f"{base_url_ensembl}{build}/{genome}/Homo_sapiens.GRCh38.110.chr.gtf.gz"
+            self.ensembl_gtf_url = f"{base_url_ensembl}{build}/gtf/{genome}/Homo_sapiens.GRCh38.110.chr.gtf.gz"
 
             # download unzip file names
             self.ensembl_fasta = self._file_from_url(self.ensembl_fa_url)
@@ -45,4 +45,3 @@ class Resources:
         """Return file path for unzipped downloaded file
         """
         return f"resources/{os.path.basename(url).replace('.gz','')}"
-    

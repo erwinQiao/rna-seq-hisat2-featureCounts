@@ -8,5 +8,3 @@ units: config/units.tsv
 ref:
   species: "homo_sapiens"  # Ensembl using homo_sapiens or genecode using human
   build: 110  #  Ensembl using100 or  genecode using 44
-
-resources:
