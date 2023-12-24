@@ -13,3 +13,8 @@ resources = Resources(config["ref"]["species"], config["ref"]["build"])
 
 #### load rules ####
 include: "rules/resources.smk"
+
+rule all:
+    input:
+        resources.ensembl_fasta,
+        resources.ensembl_gtf
