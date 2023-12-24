@@ -1,15 +1,15 @@
+import os
+from scripts.resources import Resources
 from snakemake.utils import min_version
 
 #### set minimum snakemake version ####
 min_version("7.2.3")
 
-#### set up configure ####
+#### load config ####
+configfile: "config/config.yaml"  
 
-configfile: "config/config.yaml"
+#### load genome resources to be used  
+resources = Resources(config["ref"]["species"], config["ref"]["build"])
 
 #### load rules ####
-
-include: "rules/common.smk"
-include: "rules/ref.smk"
-include: "rules/fastqc.smk"
-include: "reules/trimming.smk"
+include: "rules/resources.smk"
