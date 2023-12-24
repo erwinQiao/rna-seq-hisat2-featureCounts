@@ -10,7 +10,8 @@ rule fastqc:
     
     log:
         "logs/fastqc/{sample}{end}.log"
+
     threads:config["resources"]["fastqc"]["cpu"]
 
-    wrapper:
-        "v2.0.0/bio/fastqc"
+    shell:
+        

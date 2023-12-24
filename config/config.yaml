@@ -10,14 +10,3 @@ ref:
   build: 110  #  Ensembl using100 or  genecode using 44
 
 resources:
-  trim:
-    cpu: 60
-    time:
-  fastqc:
-    cpu: 60
-    time:
-  mapping:
-    cpu: 60
-    time: 
-  deseq2: 
-    cpu: 
