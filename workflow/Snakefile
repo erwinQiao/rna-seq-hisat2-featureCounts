@@ -1,6 +1,6 @@
 import os
 from scripts.resources import Resources
-from scripts import common as samples
+from scripts.common import input_samples
 from snakemake.utils import min_version
 
 #### set minimum snakemake version ####
@@ -13,13 +13,16 @@ configfile: "config/config.yaml"
 resources = Resources(config["ref"]["species"], config["ref"]["build"])
 
 #### get sample names
-SAMPLES =  samples.input_samples()
+SAMPLES =  input_samples()
+print(SAMPLES)
 
 #### load rules ####
 include: "rules/fastqc.smk"
-
+include: "rules/resources.smk"
 rule all:
     input:
-        output.html,
-        output.zip
+
+        resources.ensembl_fasta,
+        resources.ensembl_gtf
+
 
