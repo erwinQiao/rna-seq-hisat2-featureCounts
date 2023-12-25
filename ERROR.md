@@ -25,3 +25,11 @@
 
     问题：这种情况一般是缺少输入文件，有可能上面的output作为下面的input，文件名发生了错位
     解决：需要仔细检查，核对  
+
+https://github.com/niekwit/rna-seq-salmon-deseq2/tree/main  
+
+https://github.com/snakemake-workflows/rna-seq-star-deseq2/tree/master/workflow  
+
+https://github.com/matrs/Quality_control/blob/master/rules/qc.smk  
+
+https://snakemake-wrappers.readthedocs.io/en/stable/wrappers/fastqc.html  
