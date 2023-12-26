@@ -36,6 +36,14 @@
     问题：没有输出的需求，所以没法运行  
     解决；填写输出文件  
 
+8. IndentationError in file <tokenize>, line 64  
+    问题： 缩进出现问题，其实是格式问题  
+    解决：检查文件中缩进的情况  
+
+9. MissingInputException in rule hisat2_ensembl_index  
+    问题： 输入文件超预期  
+    解决： 仔细检查input的文件是文件还是字符串，注意“ ”的使用  
+
 
 https://github.com/niekwit/rna-seq-salmon-deseq2/tree/main  
 

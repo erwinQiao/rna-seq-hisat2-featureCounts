@@ -20,7 +20,9 @@ print(SAMPLES)
 include: "rules/fastqc.smk"
 include: "rules/trimming.smk"
 include: "rules/resources.smk"
-include: "rules/mapping.samk"
+include: "rules/hisat2_index.smk"
+include: "rules/hisat2_align.smk"
+
 
 
 
@@ -29,7 +31,7 @@ rule all:
        # "resources/Homo_sapiens.GRCh38.dna.primary_assembly.fa",
        # "resources/Homo_sapiens.GRCh38.110.chr.gtf",
          "results/qc/multiqc_report.html",
-         "resources/hisat2_index_Homo_sapiens_GRCh38_110"
+         "results/mapped.NC1.bam"
          
 
 
