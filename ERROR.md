@@ -29,7 +29,13 @@
 
 6. rule all的理解
     
-    首先要了解
+    首先要了解snakemake的运行逻辑，是由结果反向推倒输入文件，而输出文件必须有输入的需求才能保留下来，所以当你output的文件没有后续的input的时候，就需要使用rule all，input所需的文件  
+
+7. MissingRuleException: No rule to produce workflow/Snakefile (if you use input functions make sure that they don't raise unexpected exceptions).  
+
+    问题：没有输出的需求，所以没法运行  
+    解决；填写输出文件  
+
 
 https://github.com/niekwit/rna-seq-salmon-deseq2/tree/main  
 

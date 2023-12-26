@@ -16,8 +16,8 @@ resources: # computing resources
 
   trimming:
     cpu: 60
-    mem_use:
     phred: --phred33 # phred33 or phred64
 
-
-
+  hisat2:
+    cpu: 60
+  

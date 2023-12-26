@@ -18,9 +18,10 @@ print(SAMPLES)
 
 #### load rules ####
 include: "rules/fastqc.smk"
-include: "rules/resources.smk"
 include: "rules/trimming.smk"
+include: "rules/resources.smk"
 include: "rules/mapping.samk"
+
 
 
 rule all:
@@ -28,6 +29,7 @@ rule all:
        # "resources/Homo_sapiens.GRCh38.dna.primary_assembly.fa",
        # "resources/Homo_sapiens.GRCh38.110.chr.gtf",
          "results/qc/multiqc_report.html",
+         "resources/hisat2_index_Homo_sapiens_GRCh38_110"
          
 
 
