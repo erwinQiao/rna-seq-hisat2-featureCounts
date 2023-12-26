@@ -6,7 +6,7 @@
 
     问题：这个问题主要就是通配符的重复使用或者是占用，导致出现不能识别，从而报错  
 
-    方法：解决通配符的使用问题，尤其是output和benchmark之间的冲突，output本质上是输出的结果文件，不能使用output作为输出的文件夹  
+    方法：解决通配符的使用问题，尤其是output和benchmark之间的冲突，output本质上是输出的结果文件，不能使用output作为输出的文件夹,主要是检查log的通配符，output通配符，input通配符  
 
 2. Invalid syntax. Perhaps you forgot a comma?  
 
@@ -16,6 +16,7 @@
 3. MissingOutputException in rule xxx, Shutting down, this might take some time. Exiting because a job execution failed. Look above for error message  
 
     问题：还是写法出现了错误，基本上肯定是没有写对，或者逻辑上出现了bug，需要按照问题甄别  
+    处理：检查包输出的文件格式和名称，有的包只能输出到文件夹，名称都是特定的，所以output设定好之后需要去核实，否则会出现匹配不上，然后结果输出不到自定义的output上，导致程序的中断  
 
 4. Colon expected after keyword resources.  
 
