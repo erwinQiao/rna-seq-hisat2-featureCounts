@@ -14,7 +14,7 @@ if resources.genome == "homo_sapiens" and resources.build == 110:
         log:
             "logs/hisat2/index/Homo_sapiens_GRCh38_110.log"
         shell:
-            "hisat2-build -p {threads} {input} {params.prefix} 2> {log}"
+            "hisat2-build -p {threads} {input} {params.prefix} {output} 2> {log}"
     
 elif resources.genome == "human" and resources.build == 44:
     rule hisat2_genecode_index:
@@ -32,4 +32,4 @@ elif resources.genome == "human" and resources.build == 44:
         log:
             "logs/hisat2/index/human_GRCH38_p14.log"
         shell:
-            "hisat2-build -p {threads} {input} {params.prefix} 2> {log}" 
+            "hisat2-build -p {threads} {input} {params.prefix} {output} 2> {log}" 
