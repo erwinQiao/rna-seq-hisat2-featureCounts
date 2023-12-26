@@ -1,0 +1,7 @@
+﻿Sample,Group,reference,fastq_R1_filename,fastq_R2_filename
+NC1,NC,yes,NC1_R1.fastq.gz,NC1_R1.fastq.gz
+NC2,NC,yes,NC2_R1.fastq.gz,NC2_R1.fastq.gz
+NC3,NC,yes,NC3_R1.fastq.gz,NC3_R1.fastq.gz
+PC1,PC,no,PC1_R1.fastq.gz,PC1_R1.fastq.gz
+PC2,PC,no,PC2_R1.fastq.gz,PC2_R1.fastq.gz
+PC3,PC,no,PC3_R1.fastq.gz,PC3_R1.fastq.gz

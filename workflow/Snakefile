@@ -7,9 +7,9 @@ from snakemake.utils import min_version
 min_version("7.2.3")
 
 #### load config ####
-configfile: "config/config.yaml"  
+configfile: "config/config.yaml"
 
-#### load genome resources to be used  
+#### load genome resources to be used
 resources = Resources(config["ref"]["species"], config["ref"]["build"])
 
 #### get sample names
@@ -19,10 +19,15 @@ print(SAMPLES)
 #### load rules ####
 include: "rules/fastqc.smk"
 include: "rules/resources.smk"
+include: "rules/trimming.smk"
+
+
 rule all:
     input:
+       # "resources/Homo_sapiens.GRCh38.dna.primary_assembly.fa",
+       # "resources/Homo_sapiens.GRCh38.110.chr.gtf",
+         "results/qc/multiqc.html",
+         "results/trimmed/NC1_R1.fastq.gz"
 
-        resources.ensembl_fasta,
-        resources.ensembl_gtf
 
 
