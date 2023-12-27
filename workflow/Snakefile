@@ -22,6 +22,7 @@ include: "rules/trimming.smk"
 include: "rules/resources.smk"
 include: "rules/hisat2_index.smk"
 include: "rules/hisat2_align.smk"
+include: "rules/featureCounts.smk"
 
 
 

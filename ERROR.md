@@ -44,7 +44,14 @@
     问题： 输入文件超预期  
     解决： 仔细检查input的文件是文件还是字符串，注意“ ”的使用  
 
-10. MissingOutputException in rule hisat2_ensembl_index in file /home/erwin/snakemakev8/workflow/rules/hisat2_index.smk, line 5:  
+10. MissingOutputException in rule hisat2_ensembl_index in file /home/erwin/snakemakev8/workflow/rules/hisat2_index.smk, line 5: 
+    问题：缺少输出文件
+
+11. raise AttributeError(AttributeError): invalid name for input, output, wildcard, params or log: count is reserved for internal use  
+
+    问题：分配错误，意思是有内置的名称被占用，这个是count被占用，找到这个问题比较难  
+    解决：改名字，解决是容易的，但是发现比较难  
+
 
 
 

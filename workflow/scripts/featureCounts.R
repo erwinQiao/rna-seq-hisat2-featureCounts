@@ -4,17 +4,16 @@ library(Rsubread)
 library(limma)
 library(edgeR)
 
-bamFile <- snakemake@input[["bam"]]
-gtfFile <- snakemake@input[["gtf"]]
+bamFile <- snakemake@input[['bam']]
+gtfFile <- snakemake@input[['gtf']]
 nthreads <- snakemake@threads
-outlogPref <- snakemake@output[["log"]]
-outcountPref < -snakemake@output[["count"]]
+outStatsFilePath <- snakemake@output[['logfile']]
+outCountsFilePath < -snakemake@output[['count_output']]
 
-outStatsFilePath  <- paste(outlogPref, '.log',  sep = '');
-outCountsFilePath <- paste(outcountPref, '.count', sep = '');
-
+# subread
 fCountsList = featureCounts(bamFile, annot.ext=gtfFile, isGTFAnnotationFile=TRUE, nthreads=nthreads, isPairedEnd=TRUE)
 
+#edgeR
 dgeList = DGEList(counts=fCountsList$counts, genes=fCountsList$annotation)
 
 fpkm = rpkm(dgeList, dgeList$genes$Length)
