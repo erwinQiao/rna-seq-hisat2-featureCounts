@@ -12,12 +12,14 @@ ref:
 # resources setting 
 resources: # computing resources
   fastqc:
-    cpu: 60
+    cpu: 80
 
   trimming:
-    cpu: 60
+    cpu: 80
     phred: --phred33 # phred33 or phred64
 
   hisat2:
-    cpu: 60
-  
+    cpu: 80
+    
+  featureCounts:
+    cpu: 80
