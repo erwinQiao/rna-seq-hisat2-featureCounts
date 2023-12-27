@@ -28,7 +28,7 @@
     解决：需要仔细检查，核对  
 
 6. rule all的理解
-    
+
     首先要了解snakemake的运行逻辑，是由结果反向推倒输入文件，而输出文件必须有输入的需求才能保留下来，所以当你output的文件没有后续的input的时候，就需要使用rule all，input所需的文件  
 
 7. MissingRuleException: No rule to produce workflow/Snakefile (if you use input functions make sure that they don't raise unexpected exceptions).  
@@ -43,6 +43,10 @@
 9. MissingInputException in rule hisat2_ensembl_index  
     问题： 输入文件超预期  
     解决： 仔细检查input的文件是文件还是字符串，注意“ ”的使用  
+
+10. MissingOutputException in rule hisat2_ensembl_index in file /home/erwin/snakemakev8/workflow/rules/hisat2_index.smk, line 5:  
+
+
 
 
 https://github.com/niekwit/rna-seq-salmon-deseq2/tree/main  
