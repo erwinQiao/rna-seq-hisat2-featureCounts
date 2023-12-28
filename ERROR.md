@@ -59,11 +59,5 @@ invalid syntax (featureCounts.smk, line 33)
 13. Fatal error: cannot open file 'scripts/featureCounts.R': No such file or directory  
     问题：找不到文件
 
+14. 一定要注意细节，尤其是空格，逗号这些问题  
 
-https://github.com/niekwit/rna-seq-salmon-deseq2/tree/main  
-
-https://github.com/snakemake-workflows/rna-seq-star-deseq2/tree/master/workflow  
-
-https://github.com/matrs/Quality_control/blob/master/rules/qc.smk  
-
-https://snakemake-wrappers.readthedocs.io/en/stable/wrappers/fastqc.html  

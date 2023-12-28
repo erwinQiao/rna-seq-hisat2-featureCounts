@@ -20,6 +20,4 @@ resources: # computing resources
 
   hisat2:
     cpu: 80
-    
-  featureCounts:
-    cpu: 80
+

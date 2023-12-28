@@ -33,7 +33,6 @@ if resources.genome == "human" and resources.build == 44:
         retries: 3
         params:
             url = resources.gencode_gtf_url
-        
         log:
             "logs/resources/get_gencode_gtf.log"
         conda:
