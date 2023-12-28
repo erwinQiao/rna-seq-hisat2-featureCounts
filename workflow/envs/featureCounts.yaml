@@ -1,10 +1,10 @@
 channels:
   - bioconda
   - conda-forge
-  - defaults
-  - anaconda
+  - nodefaults
 dependencies:
-  - bioconductor-edger=3.14.0
-  - bioconductor-limma = 3.42.0
-  - bioconductor-rsubread = 2.0.0
-  - r-argparser=0.7.1
+  - r-optparse=1.7.3
+  - r-base=4.3.2
+  - bioconductor-edger=4.0.2
+  - bioconductor-limma = 3.58.1
+  - bioconductor-rsubread = 2.16.0

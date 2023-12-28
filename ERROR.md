@@ -52,8 +52,12 @@
     问题：分配错误，意思是有内置的名称被占用，这个是count被占用，找到这个问题比较难  
     解决：改名字，解决是容易的，但是发现比较难  
 
-
-
+12. SyntaxError in file /home/erwin/snakemakev8/workflow/rules/featureCounts.smk, line 33:
+invalid syntax (featureCounts.smk, line 33)  
+    问题：语法错误，仔细检查 ~ 不能有
+    解决：必须仔细检查，非语法内的字符  
+13. Fatal error: cannot open file 'scripts/featureCounts.R': No such file or directory  
+    问题：找不到文件
 
 
 https://github.com/niekwit/rna-seq-salmon-deseq2/tree/main  
