@@ -8,3 +8,4 @@ dependencies:
   - bioconductor-edger=4.0.2
   - bioconductor-limma = 3.58.1
   - bioconductor-rsubread = 2.16.0
+  - r-tidyverse=2.0.0

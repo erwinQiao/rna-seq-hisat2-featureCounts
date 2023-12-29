@@ -23,14 +23,14 @@ include: "rules/resources.smk"
 include: "rules/hisat2_index.smk"
 include: "rules/hisat2_align.smk"
 include: "rules/featureCounts.smk"
-
+include: "rules/mergeCounts.smk"
 
 
 
 rule all:
     input:
-         "results/qc/multiqc_report.html",
-
+        "results/qc/multiqc_report.html",
+        "results/mergeCounts/genesMerge.count"
          
 
 

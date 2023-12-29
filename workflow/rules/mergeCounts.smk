@@ -1,9 +1,12 @@
-samples = SMAPLES
-rule merge and caculate FPKM:
+rule mergeCounts:
     input:
-        "results/featureCounts/{samples}.count"
+        expand("results/featureCounts/{samples}.count",samples=SAMPLES)
     output:
-        directory(mergeCounts = "results/mergeCounts")
-
-    shell:
+        counts = "results/mergeCounts/genesMerge.count",
+        FPKM = "results/mergeCounts/genesFPKM.count",
+        TPM = "results/mergeCounts/genesTPM.count"
+    conda:
+        "../envs/featureCounts.yaml"
+    script:
+        "../scripts/mergeCounts.R"
         
