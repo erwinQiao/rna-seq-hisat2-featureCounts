@@ -13,7 +13,7 @@ rule fastqc:
         "logs/fastqc/{samples}{end}.log"
     threads:config["resources"]["fastqc"]["cpu"]
     shell:
-        "fastqc -noextract  -t {threads} -o {params.outputpath} {input} > {log}"
+        "fastqc -q -noextract  -t {threads} -o {params.outputpath} {input} > {log}"
 rule multiqc:
     input:
         expand("results/qc/fastqc/{samples}{end}_fastqc.zip", samples=SAMPLES, end = ["_R1","_R2"])
