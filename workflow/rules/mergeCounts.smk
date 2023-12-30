@@ -1,6 +1,6 @@
 rule mergeCounts:
     input:
-        expand("results/featureCounts/{samples}.count",samples=SAMPLES)
+        dataCounts = expand("results/featureCounts/{samples}.count",samples=SAMPLES)
     output:
         counts = "results/mergeCounts/genesMerge.count",
         FPKM = "results/mergeCounts/genesFPKM.count",

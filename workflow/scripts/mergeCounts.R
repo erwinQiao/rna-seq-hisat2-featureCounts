@@ -1,8 +1,9 @@
 library(tidyverse)
 
-samples<- snakemake@input[[1]]
+samples<-snakemake@input[["dataCounts"]]
 
 # sample name
+
 samples_name<-tools::file_path_sans_ext(samples)
 samples_name <- sub(".*/([^/]+)$", "\\1", samples_name)
 
@@ -27,9 +28,9 @@ tpm<- merged_data%>%
   select(gene_id = "gene_id",matches("^tpm"))
 colnames(tpm)<-c("gene_id",samples_name)
 
-write.table(count, file = snakemake@output[["counts"]])
-write.table(fpkm, file = snakemake@output[["FPKM"]])
-write.table(tpm, file =snakemake@output[["TPM"]])
+write.table(count, file = snakemake@output[["counts"]],col.names=TRUE, row.names=FALSE, quote=FALSE)
+write.table(fpkm, file = snakemake@output[["FPKM"]],col.names=TRUE, row.names=FALSE, quote=FALSE)
+write.table(tpm, file =snakemake@output[["TPM"]],col.names=TRUE, row.names=FALSE, quote=FALSE)
 
 
 
