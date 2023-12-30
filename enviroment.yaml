@@ -1,0 +1,11 @@
+channels:
+  - defaults
+  - bioconda
+  - conda-forge
+dependencies:
+  - snakemake
+  - fastqc
+  - ca-certificates
+  - certifi
+  - openssl
+  - trimmomatic
