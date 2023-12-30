@@ -23,7 +23,7 @@ rule trim_galore:
         "../envs/trim_galore.yaml"
 
     shell:
-        "trim_galore --cores {threads} --paired {params.phred} {params.extra} {input[0]} {input[1]} -o {params.outputpath} 2> {log}"
+        "(trim_galore --cores {threads} --paired {params.phred} {params.extra} {input[0]} {input[1]} -o {params.outputpath}) 2> {log}"
 
 rule rename:
     input:

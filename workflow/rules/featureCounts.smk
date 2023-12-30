@@ -7,5 +7,7 @@ rule featuresCounts:
         count_output = "results/featureCounts/{samples}",
     conda:
         "../envs/featureCounts.yaml"
+    log:
+        "logs/featureCounts/{samples}.log"
     script:
         "../scripts/featureCounts.R "

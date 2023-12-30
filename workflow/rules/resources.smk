@@ -11,7 +11,7 @@ if resources.genome == "human" and resources.build == 44:
             "../envs/resources.yaml"
         
         shell:
-            "wget -c -q {params.url} -O {output}.gz && gunzip -f {output}.gz 2> {log}" 
+            "wget -c -q {params.url} -O {output}.gz && gunzip -f {output}.gz 2>&1> {log}" 
 
     rule get_gencode_transcritome_fasta:
         output:
@@ -25,7 +25,7 @@ if resources.genome == "human" and resources.build == 44:
         conda:
             "../envs/resources.yaml"
         shell:
-            "wget -c -q {params.url} -O {output}.gz && gunzip -f {output}.gz 2> {log}" 
+            "wget -c -q {params.url} -O {output}.gz && gunzip -f {output}.gz 2>&1> {log}" 
         
     rule get_gencode_gtf:
         output:
@@ -38,7 +38,7 @@ if resources.genome == "human" and resources.build == 44:
         conda:
             "../envs/resources.yaml"
         shell:
-            "wget -c -q {params.url} -O {output}.gz && gunzip -f {output}.gz 2> {log}" 
+            "wget -c -q {params.url} -O {output}.gz && gunzip -f {output}.gz 2>&1> {log}" 
 
 elif resources.genome == "homo_sapiens" and resources.build == 110:
     rule get_ensembl_genome_fasta:
@@ -52,7 +52,7 @@ elif resources.genome == "homo_sapiens" and resources.build == 110:
         conda:
             "../envs/resources.yaml"
         shell:
-            "wget -c -q {params.url} -O {output}.gz && gunzip -f {output}.gz 2> {log}" 
+            "wget -c -q {params.url} -O {output}.gz && gunzip -f {output}.gz 2>&1> {log}" 
 
     rule get_ensembl_gtf:
         output:
@@ -65,4 +65,4 @@ elif resources.genome == "homo_sapiens" and resources.build == 110:
         conda:
             "../envs/resources.yaml"
         shell:
-            "wget -c -q {params.url} -O {output}.gz && gunzip -f {output}.gz 2> {log}" 
+            "wget -c -q {params.url} -O {output}.gz && gunzip -f {output}.gz 2>&1> {log}" 

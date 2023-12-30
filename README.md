@@ -21,9 +21,7 @@ The standard workflow performs the following steps:
 
 ## Requirment  
 
-### Install snakemake via Conda/Mamba  
-
-Step1 Install conda/mamba  
+### Install conda/miniconda  
 
 1. Please carefully read the related docs in the miniconda web <https://docs.conda.io/projects/miniconda/en/latest/>  
 
@@ -40,7 +38,9 @@ bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
 rm -rf ~/miniconda3/miniconda.sh
 ```
 
-Step2 Install snakemake and conda enviroment  
+### Install snakemake using mamba/conda
+
+1. Install snakemake and conda enviroment  
 
 ```{bash}
 # install mamba  
@@ -49,10 +49,21 @@ conda install -y -c conda-forge mamba
 # create the directory
 mkdir snakemake
 cd snakemake
-git clone https://github.com/
+git clone https://github.com/erwinQiao/rna-seq-hisat2-deseq2.git
 
-# enviroment setting
-mamba create -n snakemake --file enviroment.yaml  
+```
+
+2. Install the required snakemake  
+
+```{bash}
+# install snakemake via mamba
+mamba create -c conda-forge -c bioconda -n snakemake snakemake 
+
+# install snakemake via conda
+conda create -c conda-forge -c bioconda -n snakemake snakemake
+
+# activate the conda enviroment
+conda activate snakemake
 ```
 
 ### Run workflow  
@@ -61,19 +72,34 @@ Step1 Activate the conda enviroment
 
 ```{bash}
 conda activate snakemake
+
+# checke snakemake version
+snakemake --version
+snakemake -v
 ```
+
+**Attention: Syntax for Conda has changed in Snakemake 8.0 and later!**
+
+In the new versions of Snakemake, the syntax for using Conda environments has been adjusted. Please check the help:
+
+`snakemake --help`
 
 Step2 Input samples.csv etal  
 You need to verify if the data names, groups, and samples are consistent with sample.csv.  
 
 
-
-Step2 Run workflow  
+Step3 Run workflow  
 
 ```{bash}
 # set the cores nubmer by yourself
 
 snakemake --cores number -s workflow/Snakefile --use-conda  
 ```
+
+Step4 Rerun  
+
+if you accidentally interrupt the program and have unfinished tasks, you can use the following command to resume the execution and ensure that the incomplete tasks are successfully completed:  
+
+`snakemake --cores 90 --use-conda -s workflow/Snakefile --rerun-incomplete`  
 
 ### Inverstagte results  

@@ -7,6 +7,8 @@ rule mergeCounts:
         TPM = "results/mergeCounts/genesTPM.count"
     conda:
         "../envs/featureCounts.yaml"
+    log:
+        "logs/mergeCount/merge/log"
     script:
         "../scripts/mergeCounts.R"
         
