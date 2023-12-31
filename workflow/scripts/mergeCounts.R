@@ -27,6 +27,7 @@ colnames(count)<-c("gene_id",samples_name)
 fpkm<- merged_data%>%
   select(gene_id = "gene_id",matches("^fpkm"))
 colnames(fpkm)<-c("gene_id",samples_name)
+
 #tpm
 tpm<- merged_data%>%
   select(gene_id = "gene_id",matches("^tpm"))

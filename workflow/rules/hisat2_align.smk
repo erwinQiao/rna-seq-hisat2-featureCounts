@@ -3,12 +3,12 @@ samples = SAMPLES
 if resources.genome == "homo_sapiens" and resources.build == 110:
     rule hisat2:
         input:
-            reads = ["results/trimmed/{sample}_R1.fastq.gz", "results/trimmed/{sample}_R2.fastq.gz"],
+            reads = ["results/trimmed/{samples}_R1.fastq.gz", "results/trimmed/{samples}_R2.fastq.gz"],
             index = expand("resources/hisat2_index_Homo_sapiens/Homo_sapiens_GRCh38_110.i.ht2",i =range(1,8))
         output:
-            "results/mapped/{sample}.bam"
+            "results/mapped/{samples}.bam"
         log:
-            "logs/hisat2/align/{sample}.log"
+            "logs/hisat2/align/{samples}.log"
         threads:
             config["resources"]["hisat2"]["cpu"]
         params:
@@ -21,12 +21,12 @@ if resources.genome == "homo_sapiens" and resources.build == 110:
 elif resources.genome == "human" and resources.build == 44:
     rule hisat2:
             input:
-                reads = ["results/trimmed/{sample}_R1.fastq.gz", "results/trimmed/{sample}_R2.fastq.gz"],
+                reads = ["results/trimmed/{samples}_R1.fastq.gz", "results/trimmed/{samples}_R2.fastq.gz"],
                 index = expand("resources/human_GRCH38_p14/human_GRCH38_p14.i.ht2",i =range(1,8))
             output:
-                "results/mapped/{sample}.bam"
+                "results/mapped/{samples}.bam"
             log:
-                "logs/hisat2/align/{sample}.log"
+                "logs/hisat2/align/{samples}.log"
             threads:
                 config["resources"]["hisat2"]["cpu"]
             params:

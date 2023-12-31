@@ -4,7 +4,9 @@ rule featuresCounts:
         bam = "results/mapped/{samples}.bam",
         gtf = resources.ensembl_gtf
     output:
-        count_output = "results/featureCounts/{samples}",
+        count_output = "results/featureCounts/{samples}.count",
+    params:
+        outdir = "results/featureCounts/{samples}",
     conda:
         "../envs/featureCounts.yaml"
     log:

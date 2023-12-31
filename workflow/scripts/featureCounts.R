@@ -8,7 +8,7 @@ library(edgeR)
 
 bamFile <-snakemake@input[["bam"]]
 gtfFile <-snakemake@input[["gtf"]]
-outFilePref <- snakemake@output[["count_output"]]
+outFilePref <- snakemake@params[["outdir"]]
 nthreads<-10
 
 outCountsFilePath <- paste(outFilePref, '.count', sep = '');
