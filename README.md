@@ -102,4 +102,40 @@ if you accidentally interrupt the program and have unfinished tasks, you can use
 
 `snakemake --cores 90 --use-conda -s workflow/Snakefile --rerun-incomplete`  
 
-### Inverstagte results  
+## Inverstagte results  
+
+### Check the process  
+
+When you run the workflow, you can see the process of the workflow in the terminal.  
+
+Job stats:
+job                         count
+------------------------  -------
+all                             1
+fastqc                         12
+featuresCounts                  6
+get_ensembl_genome_fasta        1
+get_ensembl_gtf                 1
+hisat2                          6
+hisat2_ensembl_index            1
+mergeCounts                     1
+multiqc                         1
+rename                          6
+trim_galore                     6
+total                          42
+
+If you have resources, you can skip the steps of downloading the genome and building the index during the process, thus reducing both space and time. However, you must ensure that the files are complete.  
+
+Job stats:
+job                     count
+--------------------  -------
+all                         1
+fastqc                     30
+featuresCounts             15
+hisat2                     15
+hisat2_ensembl_index        1
+mergeCounts                 1
+multiqc                     1
+rename                     15
+trim_galore                15
+total                      94

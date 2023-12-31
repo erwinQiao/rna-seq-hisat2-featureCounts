@@ -15,7 +15,7 @@ rule fastqc:
         "logs/fastqc/{samples}{end}.log"
     threads:config["resources"]["fastqc"]["cpu"]
     shell:
-        "fastqc -q -noextract  -t {threads} -o {params.outputpath} {input} 2>&1> {log}"
+        "fastqc -q -noextract  -t {threads} -o {params.outputpath} {input} 2> {log}"
 rule multiqc:
     input:
         expand("results/qc/fastqc/{samples}{end}_fastqc.zip", samples=SAMPLES, end = ["_R1","_R2"])
@@ -30,6 +30,6 @@ rule multiqc:
     params:
         outputpath = "results/qc/"
     shell:
-        "multiqc --force -o {params.outputpath} {input} 2>&1> {log}"
+        "multiqc --force -o {params.outputpath} {input} 2> {log}"
 
     

@@ -16,7 +16,7 @@ if resources.genome == "homo_sapiens" and resources.build == 110:
         conda:
             "../envs/hisat2.yaml"
         shell:
-            "hisat2  --threads {threads} -x {params.index} -1 {input.reads[0]} -2 {input.reads[1]} | samtools view -Sbh -o {output}  2>&1> {log}"
+            "hisat2  --threads {threads} -x {params.index} -1 {input.reads[0]} -2 {input.reads[1]} | samtools view -Sbh -o {output}  2> {log}"
 
 elif resources.genome == "human" and resources.build == 44:
     rule hisat2:
@@ -34,4 +34,4 @@ elif resources.genome == "human" and resources.build == 44:
             conda:
                 "../envs/hisat2.yaml"
             shell:
-                "hisat2  --threads {threads} -x {params.index} -1 {input.reads[0]} -2 {input.reads[1]} | samtools view -Sbh -o {output} 2>&1> {log}"
+                "hisat2  --threads {threads} -x {params.index} -1 {input.reads[0]} -2 {input.reads[1]} | samtools view -Sbh -o {output} 2> {log}"
