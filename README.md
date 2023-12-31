@@ -108,34 +108,34 @@ if you accidentally interrupt the program and have unfinished tasks, you can use
 
 When you run the workflow, you can see the process of the workflow in the terminal.  
 
-Job stats:
-job                         count
-------------------------  -------
-all                             1
-fastqc                         12
-featuresCounts                  6
-get_ensembl_genome_fasta        1
-get_ensembl_gtf                 1
-hisat2                          6
-hisat2_ensembl_index            1
-mergeCounts                     1
-multiqc                         1
-rename                          6
-trim_galore                     6
-total                          42
+Job stats:  
+job                      
+-------------------------
+all                             
+fastqc                           
+featuresCounts                    
+get_ensembl_genome_fasta          
+get_ensembl_gtf                   
+hisat2                            
+hisat2_ensembl_index              
+mergeCounts                       
+multiqc                           
+rename                            
+trim_galore                      
+total                            
 
 If you have resources, you can skip the steps of downloading the genome and building the index during the process, thus reducing both space and time. However, you must ensure that the files are complete.  
 
-Job stats:
-job                     count
---------------------  -------
-all                         1
-fastqc                     30
-featuresCounts             15
-hisat2                     15
-hisat2_ensembl_index        1
-mergeCounts                 1
-multiqc                     1
-rename                     15
-trim_galore                15
-total                      94
+Job stats:  
+job                    
+--------------------  
+all                           
+fastqc                       
+featuresCounts               
+hisat2                       
+hisat2_ensembl_index          
+mergeCounts                   
+multiqc                       
+rename                       
+trim_galore                  
+total                        
