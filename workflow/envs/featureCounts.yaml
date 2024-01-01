@@ -11,3 +11,6 @@ dependencies:
   - r-tidyverse=2.0.0
   - r-ggplot2=3.4.4
   - bioconductor-deseq2=1.42.0
+  - bioconductor-clusterprofiler=4.10.0
+  - bioconductor-org.hs.eg.db=3.18.0
+  - r-openxlsx=4.2.5.2

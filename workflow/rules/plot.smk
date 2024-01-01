@@ -1,3 +1,14 @@
+rule pca:
+    input:
+
+    output:
+
+    conda:
+        "../envs/featureCounts.yaml"
+    script:
+    
+
+
 rule boxplot:
     input:
         fpkm = "results/mergeCounts/genesFPKM.count"
@@ -11,4 +22,10 @@ rule boxplot:
         "logs/plot/boxplot.log"
     script:
         "../scripts/boxplot.R"
+
+
+
+rule ensembl2gene:
+    input:
+        counts = "results/mergeCounts/genesMerge.count"
 
