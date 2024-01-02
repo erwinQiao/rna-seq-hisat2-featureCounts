@@ -19,7 +19,8 @@ df<-as.data.frame(pca_1$x)
 xlab1 <- paste0("PC1(",round(summ1$importance[2,1]*100,2),"%)")
 ylab1 <- paste0("PC2(",round(summ1$importance[2,2]*100,2),"%)")
 
-PCAplot<-ggplot(data = df,aes(x = PC1,y = PC2))+
+pdf(snakemake@output[[1]])
+ggplot(data = df,aes(x = PC1,y = PC2))+
   geom_point(size = 2.5,aes(color = pca$samples))+
   labs(x = xlab1,y = ylab1,color = "Condition",title = "PCA Scores Plot")+
   guides(fill = "none")+
@@ -29,5 +30,4 @@ PCAplot<-ggplot(data = df,aes(x = PC1,y = PC2))+
         plot.margin = unit(c(0.4,0.4,0.4,0.4),'cm'))+
   theme_bw()+
   geom_label_repel(aes(label=pca$samples))
-
-ggsave(snakemake@output[[1]],PCAplot,width = 0.6*ncol(TPM),height = 0.4*ncol(TPM))
+dev.off()
