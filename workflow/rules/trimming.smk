@@ -29,7 +29,7 @@ rule rename:
     input:
         fastq_fwd= "results/trimmed/{samples}_R1_val_1.fq.gz",
         report_fwd= "results/trimmed/{samples}_R1.fastq.gz_trimming_report.txt",
-        fastq_rev= "results/trimmed/{samples}_R2_val_1.fq.gz",
+        fastq_rev= "results/trimmed/{samples}_R2_val_2.fq.gz",
         report_rev= "results/trimmed/{samples}_R2.fastq.gz_trimming_report.txt"
     output:
         fastq_fwd= "results/trimmed/{samples}_R1.fastq.gz",
