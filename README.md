@@ -113,6 +113,7 @@ Job stats:
 job                      count
 ------------------------  -------
 all                             1  
+boxplot                         1
 fastqc                         12  
 featuresCounts                  6  
 get_ensembl_genome_fasta        1  
@@ -123,7 +124,7 @@ mergeCounts                     1
 multiqc                         1  
 rename                          6  
 trim_galore                     6  
-total                          42  
+total                          43 
 ```
 
 If you have resources, you can skip the steps of downloading the genome and building the index during the process, thus reducing both space and time. However, you must ensure that the files are complete.  
@@ -133,6 +134,7 @@ Job stats:
 job                     count  
 --------------------  -------
 all                         1  
+boxplot                     1
 fastqc                     30  
 featuresCounts             15  
 hisat2                     15  
@@ -141,6 +143,54 @@ mergeCounts                 1
 multiqc                     1  
 rename                     15  
 trim_galore                15  
-total                      94  
+total                      95  
 ```
 
+### Check the results  
+
+The results are in the `results` folder.  Use `tree -h -d`to check the tree of the results  
+
+The results contains three folders of **logs**, **results**, **resources**. The contents of each folder refer to the following contents  
+
+```{text}
+
+├── [4.0K]  config
+├── [4.0K]  logs
+│   ├── [4.0K]  fastqc
+│   ├── [4.0K]  featureCounts
+│   ├── [4.0K]  hisat2
+│   │   ├── [4.0K]  align
+│   │   └── [4.0K]  index
+│   ├── [4.0K]  mergeCount
+│   ├── [4.0K]  multiqc
+│   ├── [4.0K]  plot
+│   ├── [4.0K]  resources
+│   └── [4.0K]  trim_galore
+├── [4.0K]  reads
+├── [ 16K]  resources
+│   └── [ 28K]  hisat2_index_Homo_sapiens
+├── [4.0K]  results
+│   ├── [4.0K]  featureCounts
+│   ├── [4.0K]  mapped
+│   ├── [4.0K]  mergeCounts
+│   ├── [4.0K]  plot
+│   ├── [4.0K]  qc
+│   │   ├── [4.0K]  fastqc
+│   │   └── [4.0K]  multiqc_data
+│   └── [4.0K]  trimmed
+└── [4.0K]  workflow
+    ├── [4.0K]  envs
+    ├── [4.0K]  rules
+    └── [4.0K]  scripts
+        └── [4.0K]  __pycache__
+
+```
+
+The `config` folder contains the configuration file of the pipeline.  
+The `logs` folder contains the log files of the pipeline.  
+The `reads` folder contains the raw reads.  
+The `resources` folder contains the resources of the pipeline.  
+The `results` folder contains the results of the pipeline.  
+The `workflow` folder contains the workflow of the pipeline.  
+
+The main limitation of this pipeline is that it requires a relatively large hard disk. Since `tmp` is not used, all files are retained for subsequent use. At the same time, gene.fasta, index and DESEq2 are not added because of the problem of multi-group comparison.  
