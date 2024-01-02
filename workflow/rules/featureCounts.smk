@@ -12,4 +12,5 @@ rule featuresCounts:
     log:
         "logs/featureCounts/{samples}.log"
     script:
-        "../scripts/featureCounts.R "
+        "../scripts/featureCounts.R"
+
