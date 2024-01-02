@@ -41,6 +41,8 @@ rm -rf ~/miniconda3/miniconda.sh
 ### Install snakemake using mamba/conda
 
 1. Install snakemake and conda enviroment  
+snakemake need mamba to create the enviroment.  
+If you have conda installed, you can install mamba via conda.  
 
 ```{bash}
 # install mamba  
@@ -50,7 +52,6 @@ conda install -y -c conda-forge mamba
 mkdir snakemake
 cd snakemake
 git clone https://github.com/erwinQiao/rna-seq-hisat2-deseq2.git
-
 ```
 
 2. Install the required snakemake  
@@ -86,7 +87,6 @@ In the new versions of Snakemake, the syntax for using Conda environments has be
 
 Step2 Input samples.csv etal  
 You need to verify if the data names, groups, and samples are consistent with sample.csv.  
-
 
 Step3 Run workflow  
 
