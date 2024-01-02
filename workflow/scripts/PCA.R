@@ -4,6 +4,8 @@ sink(log, type="message")
 
 library(tidyverse)
 library(ggplot2)
+library(ggrepel)
+library(ggsci)
 
 TPM<-read.table(snakemake@input[["TPM"]], header=TRUE, row.names=1)
 
@@ -11,6 +13,7 @@ pca<-as.data.frame(t(TPM))%>%
   mutate(samples=colnames(TPM))
 
 pca_1<-prcomp(pca[,-ncol(pca)])
+summ1<-summary(pca_1)
 
 df<-as.data.frame(pca_1$x)
 xlab1 <- paste0("PC1(",round(summ1$importance[2,1]*100,2),"%)")
