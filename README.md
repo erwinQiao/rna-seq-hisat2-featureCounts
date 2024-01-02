@@ -1,5 +1,11 @@
 # RNA-seq (Hisat2-FeatureCounts-DeSeq2) based on Snakemake  
 
+![Conda - License](https://img.shields.io/conda/l/bioconda/snakemake?logoColor=brightgreen)
+![Conda Platform](https://img.shields.io/conda/p/bioconda/snakemake?logoColor=blue&color=blue)
+[![Snakemake Version](https://img.shields.io/badge/snakemake->7.2.4-brightgreen.svg)](https://snakemake.readthedocs.io/)
+
+
+
 ## Introduction
 
 This Snakemake workflow is designed for the analysis of RNA-seq data (Hisat2-FeatureCounts-DeSeq2). It includes steps for quality control, read alignment, quantification, and differential expression analysis.  This workflow handles paired-end data. We used the data published by our previous data.  
