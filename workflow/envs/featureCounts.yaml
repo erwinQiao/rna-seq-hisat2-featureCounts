@@ -14,4 +14,5 @@ dependencies:
   - bioconductor-clusterprofiler=4.10.0
   - bioconductor-org.hs.eg.db=3.18.0
   - r-openxlsx=4.2.5.2
-  - r-ggsci=3.0.0=0.9.4
+  - r-ggsci=3.0.0
+  - r-ggrepel=0.9.4
