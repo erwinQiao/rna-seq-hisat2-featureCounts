@@ -1,4 +1,4 @@
-log <- file(snakemake@log[1], open="wt")
+log <- file(snakemake@log[[1]], open="wt")
 sink(log)
 sink(log, type = "message")
 
@@ -37,5 +37,5 @@ Violinpolt_fpkm<-ggplot(data=data,aes(x=sample,y=expression,fill=sample))+
         legend.position = "none")+
   ylim(0,max(data$expression)*0.3)
 
-ggsave("ViolinplotFPKM.pdf", Violinpolt_fpkm,width = 1.2*ncol(filter_fpkm),
+ggsave(snakemake@output[[1]], Violinpolt_fpkm,width = 1.2*ncol(filter_fpkm),
        height = 0.8*ncol(filter_fpkm))

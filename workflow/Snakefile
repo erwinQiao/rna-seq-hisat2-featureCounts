@@ -4,7 +4,7 @@ from scripts.common import input_samples
 from snakemake.utils import min_version
 
 #### set minimum snakemake version ####
-min_version("7.2.3")
+min_version("7.2.4")
 
 #### load config ####
 configfile: "config/config.yaml"
@@ -24,13 +24,16 @@ include: "rules/hisat2_index.smk"
 include: "rules/hisat2_align.smk"
 include: "rules/featureCounts.smk"
 include: "rules/mergeCounts.smk"
+include: "rules/plot.smk"
 
 rule all:
     input:
         "results/qc/multiqc_report.html",
         "results/mergeCounts/genesMerge.count",
         "results/mergeCounts/genesFPKM.count",
-        "results/mergeCounts/genesTPM.count"
+        "results/mergeCounts/genesTPM.count",
+        "results/plot/PCAplot.pdf",
+        "results/plot/ViolinplotFPKM.pdf"
          
 
 

@@ -7,17 +7,17 @@ samples: config/samples.tsv
 # ref setting 
 ref:
   species: "homo_sapiens"  # Ensembl using homo_sapiens or genecode using human
-  build: 110  #  Ensembl using100 or  genecode using 44
+  build: 110  # Ensembl using100 or  genecode using 44
 
 # resources setting 
 resources: # computing resources
   fastqc:
-    cpu: 80
+    cpu: 85
 
   trimming:
-    cpu: 80
+    cpu: 85
     phred: --phred33 # phred33 or phred64
 
   hisat2:
-    cpu: 80
+    cpu: 85
 
