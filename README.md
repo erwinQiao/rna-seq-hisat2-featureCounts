@@ -41,8 +41,10 @@ rm -rf ~/miniconda3/miniconda.sh
 ### Install snakemake using mamba/conda
 
 1. Install snakemake and conda enviroment  
-snakemake need mamba to create the enviroment.  
+**snakemake need mamba to create the enviroment.**  
 If you have conda installed, you can install mamba via conda.  
+
+Using mamba will speed up, snakemake is using mamba by default, if not installed, it will report an error, and you need to use conda according to the prompts.  
 
 ```{bash}
 # install mamba  
@@ -52,6 +54,10 @@ conda install -y -c conda-forge mamba
 mkdir snakemake
 cd snakemake
 git clone https://github.com/erwinQiao/rna-seq-hisat2-deseq2.git
+
+# if you canot use git, you can download the rna-seq-hisat2-deseq2.zip and unzip it.  
+# or you can git from gitee  
+git clone git@gitee.com:erwinqiao/rna-seq-hisat2-deseq2.git
 ```
 
 2. Install the required snakemake  
@@ -77,6 +83,17 @@ conda activate snakemake
 # checke snakemake version
 snakemake --version
 snakemake -v
+```
+
+If you are slow to build env, you can create the environment first and then install snakemake  
+
+```{bash}
+conda create -n snakemake  
+
+conda activate snakemake  
+
+conda install -c conda-forge -c bioconda snakemake
+mamba install -c conda-forge -c bioconda snakemake
 ```
 
 **Attention: Syntax for Conda has changed in Snakemake 8.0 and later!**
