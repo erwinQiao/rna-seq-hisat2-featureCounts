@@ -1,10 +1,10 @@
 # RNA-seq (Hisat2-FeatureCounts-DeSeq2) based on Snakemake  
 
-![Conda - License](https://img.shields.io/conda/l/bioconda/snakemake?logoColor=brightgreen)
-![Conda Platform](https://img.shields.io/conda/p/bioconda/snakemake?logoColor=blue&color=blue)
-[![Snakemake Version](https://img.shields.io/badge/snakemake->7.2.4-brightgreen.svg)](https://snakemake.readthedocs.io/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/erwinQiao/rna-seq-hisat2-deseq2/blob/main/LICENSE)
 
+[![Snakemake Version](https://img.shields.io/badge/snakemake->7.2.4-brightgreen.svg)](https://snakemake.github.io/)
 
+[![Bioconda](https://img.shields.io/conda/vn/bioconda/bowtie2.svg)](https://bioconda.github.io/)
 
 ## Introduction
 
