@@ -1,6 +1,6 @@
 # RNA-seq (Hisat2-FeatureCounts-DeSeq2) based on Snakemake  
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/erwinQiao/rna-seq-hisat2-deseq2/blob/main/LICENSE) [![Snakemake Version](https://img.shields.io/badge/snakemake->7.2.4-brightgreen.svg)](https://snakemake.github.io/)  [![Bioconda](https://img.shields.io/conda/vn/bioconda/bowtie2.svg)](https://bioconda.github.io/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/erwinQiao/rna-seq-hisat2-deseq2/blob/main/LICENSE) [![Snakemake Version](https://img.shields.io/badge/snakemake->7.32.4-brightgreen.svg)](https://snakemake.github.io/)  [![Bioconda](https://img.shields.io/conda/vn/bioconda/bowtie2.svg)](https://bioconda.github.io/)
 
 ## Introduction
 
@@ -215,3 +215,13 @@ The `results` folder contains the results of the pipeline.
 The `workflow` folder contains the workflow of the pipeline.  
 
 The main limitation of this pipeline is that it requires a relatively large hard disk. Since `tmp` is not used, all files are retained for subsequent use. At the same time, gene.fasta, index and DESEq2 are not added because of the problem of multi-group comparison.  
+
+### Check the DAG  
+
+You can check the DAG of the pipeline by running the following command:  
+
+```bash
+snakemake --dag results/plot/ViolinplotFPKM.pdf | dot -Tsvg > dag.svg
+```
+![dag](./images/dag.svg)
+
