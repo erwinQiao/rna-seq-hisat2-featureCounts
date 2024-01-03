@@ -28,5 +28,5 @@ elif resources.genome =="human" and resources.build==44:
         log:
             "logs/featureCounts/{samples}.log"
         script:
-            "../scripts/featureCounts.R "
+            "../scripts/featureCounts.R"
 
