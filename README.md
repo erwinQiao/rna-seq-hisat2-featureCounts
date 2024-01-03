@@ -104,8 +104,10 @@ In the new versions of Snakemake, the syntax for using Conda environments has be
 
 `snakemake --help`
 
-Step2 Input samples.csv etal  
+**Step2 Input samples.csv etal**  
+
 You need to verify if the data names, groups, and samples are consistent with sample.csv.  
+In the config/config.yaml, you can choose the ensembl using homo_sapiens 110 fasta (gtf) or genecode human 44 fasta(gtf). You need to fill by your choose.
 
 Step3 Run workflow  
 

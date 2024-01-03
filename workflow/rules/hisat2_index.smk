@@ -29,7 +29,7 @@ elif resources.genome == "human" and resources.build == 44:
         threads:
             config["resources"]["hisat2"]["cpu"]
         params:
-            path = "resources/hisat2_index_Homo_sapiens/",
+            path = "resources/hisat2_index_human/",
             prefix = "human_GRCH38_p14"
 
         conda:
