@@ -22,7 +22,7 @@ elif resources.genome == "human" and resources.build == 44:
     rule hisat2:
             input:
                 reads = ["results/trimmed/{samples}_R1.fastq.gz", "results/trimmed/{samples}_R2.fastq.gz"],
-                index = expand("resources/human_GRCH38_p14/human_GRCH38_p14.{i}.ht2",i =range(1,9))
+                index = expand("resources/hisat2_index_human/human_GRCH38_p14.{i}.ht2",i =range(1,9))
             output:
                 "results/mapped/{samples}.bam"
             log:
