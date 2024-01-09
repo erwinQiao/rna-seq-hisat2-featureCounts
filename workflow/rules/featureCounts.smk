@@ -13,7 +13,7 @@ if resources.genome =="homo_sapiens" and resources.build==110:
         log:
             "logs/featureCounts/{samples}.log"
         script:
-            "../scripts/featureCounts.R "
+            "../scripts/featureCounts.R"
 elif resources.genome =="human" and resources.build==44:
     rule featuresCounts:
         input:
