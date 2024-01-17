@@ -77,7 +77,7 @@ conda activate snakemake
 
 ### Run workflow  
 
-Step1 Activate the conda enviroment
+**Step1 Activate the conda enviroment**
 
 ```{bash}
 conda activate snakemake
@@ -107,9 +107,12 @@ In the new versions of Snakemake, the syntax for using Conda environments has be
 **Step2 Input samples.csv etal**  
 
 You need to verify if the data names, groups, and samples are consistent with sample.csv.  
-In the config/config.yaml, you can choose the ensembl using homo_sapiens 110 fasta (gtf) or genecode human 44 fasta(gtf). You need to fill by your choose.
 
-Step3 Run workflow  
+Meanwhile,you need to create a directory names **reads** in dir (rna-seq-hisat2-featureCounts). You just need to make sure that the 'reads' folder and the 'workflow' are in the same directory.  
+
+In the config/config.yaml, you can choose the ensembl using homo_sapiens 110 fasta (gtf) or genecode human 44 fasta(gtf). You need to fill by your choose.  
+
+**Step3 Run workflow** 
 
 ```{bash}
 # set the cores nubmer by yourself
